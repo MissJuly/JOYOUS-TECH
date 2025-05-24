@@ -1,0 +1,1 @@
+web: gunicorn joyous_tech_backend.wsgi --log-file -
