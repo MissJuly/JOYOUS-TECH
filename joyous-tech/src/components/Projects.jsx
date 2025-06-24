@@ -5,7 +5,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/projects/') // Update this to your backend URL
+      fetch('https://joyous-tech.onrender.com/api/projects/')
       .then(res => res.json())
       .then(data => setProjects(data))
       .catch(err => console.error(err));
@@ -30,7 +30,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="block rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition"
             >
-              <img src={`http://127.0.0.1:8000${project.image}`} alt={title} className="w-full h-48 object-cover" />
+              <img src={`https://joyous-tech.onrender.com${project.image}`} alt={title} className="w-full h-48 object-cover" />
               <div className="p-4 bg-gray-800">
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
                 <p className="text-gray-300">{description}</p>
