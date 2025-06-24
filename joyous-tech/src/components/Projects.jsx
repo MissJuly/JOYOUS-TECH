@@ -5,6 +5,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
  const API_URL = process.env.REACT_APP_API_URL;
+  console.log("API URL is:", process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     fetch(`${API_URL}/projects/`)
