@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [status, setStatus] = useState('');
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const handleChange = (e) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -14,7 +15,7 @@ const Contact = () => {
         setStatus('Sending...');
 
         try {
-        const response = await fetch('https://joyous-tech.onrender.com/api/contact/', {
+        const response = await fetch('${API_URL}/contact/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
