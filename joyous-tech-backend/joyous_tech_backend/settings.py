@@ -189,22 +189,23 @@ if not DEBUG:
 # Error logging
 LOGGING = {
     'version': 1,
+    'disable_existing_loggers': False,  # keeps default logging
     'handlers': {
         'console': {
-            'level': 'DEBUG',
+            'level': 'DEBUG',  # show all levels of logs in the console
             'class': 'logging.StreamHandler',
         },
-        'file': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs/django.log',
-        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console'],
             'level': 'DEBUG',
-            'propagate': True,
+            'propagate': False,
         },
     },
 }
+
