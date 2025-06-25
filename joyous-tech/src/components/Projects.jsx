@@ -33,7 +33,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="block rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition"
             >
-              <img src={`${process.env.REACT_APP_API_URL}${image}`} alt={title} className="w-full h-48 object-cover" />
+              <img src={image} alt={title} className="w-full h-48 object-cover" />
               <div className="p-4 bg-gray-800">
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
                 <p className="text-gray-300">{description}</p>
